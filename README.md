@@ -86,7 +86,7 @@ no shutdown
 exit
 ```
 
-[Image Placeholder]
+![start](/img/1.png)
 
 ### Virtual Machine Configuration
 
@@ -117,14 +117,11 @@ Use tools like `ettercap` or `arpspoof` to carry out the MITM attack using ARP s
 ettercap -T -q -i eth0 -M arp:remote /192.168.1.1// /192.168.1.2//
 ```
 
-[Image Placeholder]
-
 ## Results Analysis
 
 The MITM attack was successful. Using ARP spoofing and ARP poisoning, the attacker was able to intercept and manipulate the data between the victim machine and the router. The packets were correctly captured and analyzed in Wireshark, confirming the success of the attack.
 
-[Image Placeholder]
-
+![start](/img/2.png)
 ## Protection and Mitigation Mechanisms
 
 - Implementation of Access Control Lists (ACLs).
@@ -135,6 +132,7 @@ The MITM attack was successful. Using ARP spoofing and ARP poisoning, the attack
 
 An attempt was made to perform the ARP spoofing attack in a simulation where the attacker was located in a different subnet from the victim machine. This attack did not succeed. 
 
+![start](/img/6.png)
 ### Reason for Failure:
 
 ARP (Address Resolution Protocol) is a layer 2 protocol used to map IP addresses to MAC addresses within the same local network segment or subnet. It does not function across different subnets because routers do not forward ARP messages between subnets. Each subnet maintains its own ARP table, and the ARP requests and replies are confined within the local network segment. Therefore, ARP spoofing is only feasible within the same subnet.
@@ -144,8 +142,6 @@ ARP (Address Resolution Protocol) is a layer 2 protocol used to map IP addresses
 Man-in-the-middle (MITM) attacks, when executed using ARP Spoofing and ARP Poisoning, can have serious consequences for network security. The successful execution of the MITM attack in this project highlights the potential for data interception, session hijacking, and denial of service. It is essential to implement robust protection and mitigation measures to prevent these attacks. Measures such as Access Control Lists (ACLs), static ARP entries, and switch security features like port security are critical in safeguarding against ARP spoofing attacks.
 
 ARP Spoofing is a potent method to achieve MITM attacks, making it vital for network administrators to understand and protect against such vulnerabilities to maintain the integrity and confidentiality of network communications.
-
-[Image Placeholder]
 
 ---
 
